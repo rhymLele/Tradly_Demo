@@ -8,8 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.duc.tradly.Home.sreens.HomeActivity
+import com.duc.tradly.Home.screens.HomeActivity
 import com.duc.tradly.Onboarding.OnboardActivity
 
 class SplashFragment : Fragment() {

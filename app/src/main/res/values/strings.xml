@@ -19,6 +19,11 @@
      </string>
     <string name="product_description">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis cras placerat diam ipsum ut. Nisi vel adipiscing massa bibendum diam. Suspendisse mattis dui maecenas duis mattis. Mattis aliquam at arcu, semper nunc, venenatis et pellentesque eu. Id tristique maecenas tristique habitasse eu elementum sed. Aliquam eget lacus, arcu, adipiscing eget feugiat in dolor sagittis.
-Non commodo, a justo massa porttitor sed placerat in. Orci tristique etiam tempus sed. Mi varius morbi egestas dictum tempor nisl. In
+\n Non commodo, a justo massa porttitor sed placerat in. Orci tristique etiam tempus sed. Mi varius morbi egestas dictum tempor nisl. In
      </string>
+    <string name="button_home">Home</string>
+    <string name="button_profile">Profile</string>
+    <string name="button_browse">Browse</string>
+    <string name="button_store">Store</string>
+    <string name="button_orderHistory">Order History</string>
 </resources>

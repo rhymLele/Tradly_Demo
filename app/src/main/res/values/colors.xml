@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#33907C</color>
     <color name="Lightgreen">#33917C</color>
+    <color name="AcliceBlue">#f0f8ff</color>
+    <color name="Grey">#4f4f4f</color>
 </resources>

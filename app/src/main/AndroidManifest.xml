@@ -16,26 +16,30 @@
             android:exported="false" />
         <activity
             android:name=".Detail.DetailActivity"
-            android:exported="false" />
+            android:exported="false">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
         <activity
-            android:name=".Home.sreens.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity3"
-            android:exported="false"
-            android:theme="@style/Theme.Tradly" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:theme="@style/Theme.Tradly" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".Home.screens.HomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
     </application>
 

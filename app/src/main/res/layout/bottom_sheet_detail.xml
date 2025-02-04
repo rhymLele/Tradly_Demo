@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/bottom_sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="20dp">
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="15dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:layout_gravity="center|top"
+            android:layout_marginBottom="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:text="Condition" />
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fixed" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:text="Price Type" />
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organic" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:text="Category" />
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beverages" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:text="Location" />
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kualalumpur, Malaysia" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Additional Details -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/additional_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Additional Details"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:text="Delivery Details"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/delivery_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home Delivery Available, Cash On Delivery"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

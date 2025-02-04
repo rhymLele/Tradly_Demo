@@ -7,10 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.duc.tradly.Home.sreens.HomeActivity
+import com.duc.tradly.Home.screens.HomeActivity
 import com.duc.tradly.R
 
 class OnboardActivity : AppCompatActivity() {

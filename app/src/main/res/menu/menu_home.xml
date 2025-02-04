@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bottom_home"
+        android:title="@string/button_home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item android:id="@+id/bottom_browse"
+        android:title="@string/button_browse"
+        android:icon="@drawable/baseline_search_24v2"/>
+    <item android:id="@+id/bottom_store"
+        android:title="@string/button_store"
+        android:icon="@drawable/baseline_storefront_24"/>
+    <item android:id="@+id/bottom_order"
+        android:title="@string/button_orderHistory"
+        android:icon="@drawable/baseline_receipt_24"/>
+    <item android:id="@+id/bottom_profile"
+        android:title="@string/button_profile"
+        android:icon="@drawable/baseline_assignment_ind_24"/>
+</menu>
