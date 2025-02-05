@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detail"
@@ -8,341 +9,351 @@
     android:background="@color/AcliceBlue"
     tools:context=".Detail.DetailActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!--            Product Image (Topper Page)        -->
-        <RelativeLayout
-            android:id="@+id/layout_image"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:background="@drawable/pic1">
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/view_pager2"
-                android:layout_width="match_parent"
-
-                android:layout_height="220dp" />
-            <ImageButton
-                android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_margin="12dp"
-                android:background="@drawable/circle_background"
-                android:src="@drawable/baseline_arrow_back_24" />
-
-            <ImageButton
-                android:id="@+id/icon1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="12dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/circle_background"
-                android:src="@drawable/baseline_more_vert_24" />
-
-            <ImageButton
-                android:id="@+id/icon2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:layout_marginEnd="16dp"
-                android:layout_toLeftOf="@id/icon1"
-                android:background="@drawable/circle_background"
-                android:src="@drawable/baseline_done_24" />
-
-            <ImageButton
-                android:id="@+id/icon3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:layout_marginEnd="16dp"
-                android:layout_toLeftOf="@id/icon2"
-                android:background="@drawable/circle_background"
-                android:src="@drawable/baseline_share_24" />
-            <me.relex.circleindicator.CircleIndicator3
-                android:id="@+id/circle_indicator"
-                android:layout_width="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                app:ci_drawable="@drawable/bg_indicator"
-                android:layout_height="40dp" />
-        </RelativeLayout>
-        <!--            Product Price (Middle Page)         -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/white"
-
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:orientation="vertical"
-            android:padding="20dp">
+            tools:ignore="ObsoleteLayoutParam">
+            <!--            Product Image (Topper Page)        -->
+            <RelativeLayout
+                android:id="@+id/layout_image"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/pic1">
 
-            <TextView
-                android:id="@+id/tv_product_detail_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Coca Cola"
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager2"
+                    android:layout_width="match_parent"
 
-                android:textSize="20sp"
+                    android:layout_height="220dp" />
 
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_product_detail_price"
+                <ImageButton
+                    android:id="@+id/btn_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$25"
-                    android:textColor="@color/green"
-                    android:textSize="18sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/circle_background"
+                    android:src="@drawable/baseline_arrow_back_24" />
+
+                <ImageButton
+                    android:id="@+id/icon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/circle_background"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/baseline_more_vert_24" />
+
+                <ImageButton
+                    android:id="@+id/icon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_toLeftOf="@id/icon1"
+                    android:background="@drawable/circle_background"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/baseline_heart_broken_24" />
+
+                <ImageButton
+                    android:id="@+id/icon3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_toLeftOf="@id/icon2"
+                    android:background="@drawable/circle_background"
+                    android:src="@drawable/baseline_share_24" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/circle_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:ci_drawable="@drawable/bg_indicator" />
+            </RelativeLayout>
+            <!--            Product Price (Middle Page)         -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tv_product_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coca Cola"
+
+                    android:textSize="20sp"
+
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/original_price"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$50"
-                    android:textSize="18sp"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/Grey"
-                  />
+                    android:layout_height="wrap_content">
 
-                <!-- Giảm giá -->
-                <TextView
-                    android:id="@+id/discount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="50% off"
-                    android:textSize="18sp"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/Grey" />
+                    <TextView
+                        android:id="@+id/tv_product_detail_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$25"
+                        android:textColor="@color/green"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/original_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="$50"
+                        android:textColor="@color/Grey"
+                        android:textSize="18sp" />
+
+                    <!-- Giảm giá -->
+                    <TextView
+                        android:id="@+id/discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="50% off"
+                        android:textColor="@color/Grey"
+                        android:textSize="18sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-        <!--            Store Owner Infor-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/img_detail_icon_gro"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ava1"
-               />
-            <TextView
-                android:id="@+id/tv_product_detail_gro"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+            <!--            Store Owner Infor-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
                 android:gravity="center_vertical"
-                android:paddingStart="10dp"
-                android:text="Tradly Store"
-                android:textSize="20sp" />
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
-            <Button
-                android:id="@+id/btn_follow"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/green"
-                android:text="Follow" />
-        </LinearLayout>
-        <!--            Product Description            -->
-        <TextView
-            android:id="@+id/product_description"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:padding="16dp"
-            android:text="@string/product_description"
-            android:textColor="#666666"
-            android:textSize="18sp" />
-
-        <!-- Add to Cart Button -->
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/bottom_sheet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/AcliceBlue"
-        android:orientation="vertical"
-        app:behavior_hideable="false"
-        app:behavior_peekHeight="100dp"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <Button
-                android:id="@+id/add_to_cart_button"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/green"
-                android:text="Add To Cart"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btn_keolen"
-                android:layout_width="160dp"
-                android:layout_height="15dp"
-                android:layout_gravity="center|top"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="@android:color/darker_gray" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_detail_icon_gro"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ava1" />
 
                 <TextView
-                    android:layout_width="101dp"
+                    android:id="@+id/tv_product_detail_gro"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Condition" />
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:text="Tradly Store"
+                    android:textSize="20sp" />
 
-                <Space
-                    android:layout_width="60dp"
-                    android:layout_height="0dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fixed" />
+                <Button
+                    android:id="@+id/btn_follow"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/green"
+                    android:text="Follow" />
             </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="101dp"
-                    android:layout_height="wrap_content"
-                    android:text="Price Type" />
-
-                <Space
-                    android:layout_width="60dp"
-                    android:layout_height="0dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Organic" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="101dp"
-                    android:layout_height="wrap_content"
-                    android:text="Category" />
-
-                <Space
-                    android:layout_width="60dp"
-                    android:layout_height="0dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beverages" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="101dp"
-                    android:layout_height="wrap_content"
-                    android:text="Location" />
-
-                <Space
-                    android:layout_width="60dp"
-                    android:layout_height="0dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kualalumpur, Malaysia" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Additional Details -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="16dp">
-
+            <!--            Product Description            -->
             <TextView
-                android:id="@+id/additional_details_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Additional Details"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:id="@+id/product_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="16dp"
+                android:text="@string/product_description"
+                android:textColor="#666666"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
 
-                <TextView
-                    android:layout_width="101dp"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Delivery Details"
-                    android:textColor="#666666"
-                    android:textSize="14sp" />
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
-                <Space
-                    android:layout_width="60dp"
-                    android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
 
-                <TextView
-                    android:id="@+id/delivery_details"
-                    android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="101dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Grey"
+                            android:text="Condition" />
+
+                        <Space
+                            android:layout_width="60dp"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fixed" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="101dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Grey"
+                            android:text="Price Type" />
+
+                        <Space
+                            android:layout_width="60dp"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Organic" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="101dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Grey"
+                            android:text="Category" />
+
+                        <Space
+                            android:layout_width="60dp"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Beverages" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="101dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Grey"
+                            android:text="Location" />
+
+                        <Space
+                            android:layout_width="60dp"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kualalumpur, Malaysia" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Home Delivery Available, Cash On Delivery"
-                    android:textColor="#666666"
-                    android:textSize="14sp" />
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/additional_details_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Additional Details"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="101dp"
+                            android:layout_height="wrap_content"
+                            android:text="Delivery Details"
+                            android:textColor="@color/Grey"
+                            android:textSize="14sp" />
+
+                        <Space
+                            android:layout_width="60dp"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:id="@+id/delivery_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Home Delivery Available, Cash On Delivery"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
             </LinearLayout>
-
-
+            <!-- Add to Cart Button -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/add_to_cart_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/green"
+        android:text="Add To Cart"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
