@@ -1,5 +1,6 @@
 package com.duc.tradly.Detail
 
+import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
@@ -9,19 +10,25 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.duc.tradly.CartManager
 import com.duc.tradly.Detail.Adapter.PhotoViewAdapter2
 import com.duc.tradly.Detail.Entities.Photo2
 import com.duc.tradly.Home.Entities.Product
+import com.duc.tradly.Home.screens.WishListActivity
 
 import com.duc.tradly.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import me.relex.circleindicator.CircleIndicator3
 
 class DetailActivity : AppCompatActivity() {
+    lateinit var btn_Wish:ImageButton
+    private lateinit var wishListLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,44 +38,15 @@ class DetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right,systemBars.bottom)
             insets
         }
-//        val bottomSheet = findViewById<View>(R.id.bottom_sheet)
-//        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-//
-//        bottomSheetBehavior.peekHeight = 300
-//        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-//        val bt=findViewById<Button>(R.id.btn_keolen)
-//        bottomSheetBehavior.addBottomSheetCallback(object :
-//            BottomSheetBehavior.BottomSheetCallback() {
-//            override fun onStateChanged(bottomSheet: View, newState: Int) {
-//                // Không cần xử lý gì ở đây nếu chỉ giới hạn chiều cao
-//                when (newState) {
-//                    BottomSheetBehavior.STATE_COLLAPSED -> {
-//                        bottomSheetBehavior.peekHeight = 300
-//                        Log.d("height",bottomSheetBehavior.state.toString())
-//                        bt.visibility=View.VISIBLE
-//                    }
-//
-//                    BottomSheetBehavior.STATE_EXPANDED -> {
-//                        bt.visibility=View.INVISIBLE
-//                        bottomSheetBehavior.maxHeight = 600
-//                        Log.d("height1",bottomSheetBehavior.state.toString())
-//                    }
-//                }
-//            }
-//
-//            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-//            }
-//        })
-//
-//        val mViewPager2:ViewPager2
-//        val mCircleIndicator3:CircleIndicator3
         val btn_back=findViewById<ImageButton>(R.id.btn_back)
-//        mViewPager2=findViewById(R.id.view_pager2)
-//        mCircleIndicator3=findViewById(R.id.circle_indicator)
+        val btn_add=findViewById<Button>(R.id.add_to_cart_button)
+        btn_Wish=findViewById(R.id.icon2)
+        btn_Wish.setOnClickListener {
+            val intent= Intent(this, WishListActivity::class.java)
+            startActivity(intent)
+        }
         val data =getListPhoto()
-        val photoViewPagerAdapter= PhotoViewAdapter2(data)
-//        mViewPager2.adapter=photoViewPagerAdapter
-//        mCircleIndicator3.setViewPager(mViewPager2)
+
         val originalPrice = findViewById<TextView>(R.id.original_price)
         originalPrice.paintFlags = originalPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         val product = intent.getSerializableExtra("product_data") as? Product
@@ -82,8 +60,31 @@ class DetailActivity : AppCompatActivity() {
             priceTextView.text = "$${product.price}"
             groceryNameTextView.text = product.grocery.name
             iconGrocery.setImageResource(product.grocery.resourceIdIcon)
+            if(CartManager.cart.contains(product))
+            {
+                btn_Wish.setImageResource(R.drawable.baseline_heart_broken_24v32)
+            }
+            else{
+                btn_Wish.setImageResource(R.drawable.baseline_heart_broken_24)
+            }
         }
 
+        btn_add.setOnClickListener {
+            if (product != null) {
+                CartManager.cart.addProduct(product = product)
+                btn_Wish.setImageResource(R.drawable.baseline_heart_broken_24v32)
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Alert Dialog")
+                    .setMessage("Added in Wishlist.")
+                    .setPositiveButton("OK") { dialog, _ ->
+                        dialog.dismiss() // Đóng hộp thoại khi nhấn "OK"
+                    }
+                    .show()
+            } else {
+
+                Log.e("DetailActivity", "Product is null")
+            }
+        }
         btn_back.setOnClickListener {
             finish()
         }
@@ -94,5 +95,18 @@ class DetailActivity : AppCompatActivity() {
         a.add(Photo2(R.drawable.pic1))
         a.add(Photo2(R.drawable.pic1))
         return a
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("onResume","dang here")
+        val sharedPreferences = getSharedPreferences("WishListPrefs", MODE_PRIVATE)
+        val isProductInWishList = sharedPreferences.getBoolean("isProductInWishList", true)
+
+        if (isProductInWishList) {
+            btn_Wish.setImageResource(R.drawable.baseline_heart_broken_24v32)
+        } else {
+            btn_Wish.setImageResource(R.drawable.baseline_heart_broken_24)  // Chuyển icon thành màu trắng
+        }
     }
 }

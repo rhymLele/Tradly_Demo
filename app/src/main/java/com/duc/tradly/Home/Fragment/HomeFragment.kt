@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,7 @@ import com.duc.tradly.Home.Entities.GridItem
 import com.duc.tradly.Home.Entities.Grocery
 import com.duc.tradly.Home.Entities.Phantu
 import com.duc.tradly.Home.Entities.Product
+import com.duc.tradly.Home.screens.WishListActivity
 import com.duc.tradly.R
 
 
@@ -41,7 +43,7 @@ class HomeFragment : Fragment() {
         val recyclerView3: RecyclerView = view.findViewById(R.id.recycler_home_3)
         val recyclerView4: RecyclerView = view.findViewById(R.id.recycler_home_4)
         val recyclerGView: RecyclerView = view.findViewById(R.id.recycler_grid)
-
+        val wishList:ImageButton=view.findViewById(R.id.btn_wish)
         recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView2.layoutManager =
@@ -96,6 +98,10 @@ class HomeFragment : Fragment() {
             selectedProduct->
             val intent=Intent(requireContext(),DetailActivity::class.java)
             intent.putExtra("product_data",selectedProduct)
+            startActivity(intent)
+        }
+        wishList.setOnClickListener {
+            val intent=Intent(requireContext(),WishListActivity::class.java)
             startActivity(intent)
         }
         recyclerView2.adapter = productAdapter

@@ -36,6 +36,7 @@ class OnboardActivity : AppCompatActivity() {
             insets
         }
         anhxa()
+
         description.text = splashText1
         image.setImageResource(R.drawable.group6)
         btn.setText("Next")

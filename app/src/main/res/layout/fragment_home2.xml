@@ -47,6 +47,7 @@ tools:context=".Home.Fragment.HomeFragment">
                     android:src="@drawable/baseline_shopping_cart_24" />
 
                 <ImageButton
+                    android:id="@+id/btn_wish"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_toLeftOf="@+id/btn_cart"
