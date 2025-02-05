@@ -1,44 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/main"
+tools:context=".Onboarding.OnboardActivity"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<View
+    android:id="@+id/view2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Onboarding.OnboardActivity">
+    android:layout_height="350dp"
+    android:background="@color/green"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_ob_1"
+    android:layout_width="307dp"
+    android:layout_height="334dp"
+    android:layout_marginTop="172dp"
+    app:layout_constraintEnd_toEndOf="@+id/view2"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@color/white"
+    app:layout_constraintTop_toTopOf="parent">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="307dp"
-        android:layout_height="334dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:src="@drawable/group6"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/description"
         android:layout_width="283dp"
         android:layout_height="60dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Empowering Artisans,\n Farmers &amp; Micro Business"
         android:textColor="@color/green"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_ob_1" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="306dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="40dp"
-        android:text="Next"
-        android:background="@drawable/button_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:id="@+id/dot_indicator_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/dot_selected" />
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/dot_unselected" />
+
+        <View
+            android:id="@+id/dot3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/dot_unselected" />
+    </LinearLayout>
+<Button
+    android:id="@+id/button"
+    android:layout_width="306dp"
+    android:layout_height="48dp"
+    android:layout_marginBottom="40dp"
+    android:text="Next"
+    android:backgroundTint="@color/green"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

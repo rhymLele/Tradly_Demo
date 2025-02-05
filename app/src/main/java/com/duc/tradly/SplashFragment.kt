@@ -22,13 +22,12 @@ class SplashFragment : Fragment() {
 //                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
                 val intent = Intent(requireContext(), HomeActivity::class.java)
                 startActivity(intent)
-                // Kết thúc SplashFragment (nếu không muốn quay lại)
+
                 requireActivity().finish()
             }else{
 //                findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
                 val intent = Intent(requireContext(), OnboardActivity::class.java)
                 startActivity(intent)
-                // Kết thúc SplashFragment (nếu không muốn quay lại)
                 requireActivity().finish()
             }
         }, 3000)

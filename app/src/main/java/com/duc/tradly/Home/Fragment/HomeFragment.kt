@@ -1,5 +1,6 @@
 package com.duc.tradly.Home.Fragment
 
+import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.duc.tradly.Detail.DetailActivity
 import com.duc.tradly.Home.Adapter.GridAdapter
 import com.duc.tradly.Home.Adapter.ListGroceryAdapter
 import com.duc.tradly.Home.Adapter.ListProductAdapter
@@ -76,7 +78,7 @@ class HomeFragment : Fragment() {
             Grocery(R.drawable.ava1, R.drawable.rec41, "Grocery 3")
         )
         val products = listOf(
-            Product(R.drawable.pic1, "Product 1", 10.99, groceries[0]),
+            Product(R.drawable.fi, "Product 1", 10.99, groceries[0]),
             Product(R.drawable.shampoo, "Product 2", 20.99, groceries[1]),
             Product(R.drawable.pic1, "Product 3", 20.99, groceries[2])
         )
@@ -90,7 +92,12 @@ class HomeFragment : Fragment() {
             GridItem(R.drawable.rec34, "Homecare"),
             GridItem(R.drawable.rec35, "Pet Care"),
         )
-        val productAdapter = ListProductAdapter(products)
+        val productAdapter = ListProductAdapter(products){
+            selectedProduct->
+            val intent=Intent(requireContext(),DetailActivity::class.java)
+            intent.putExtra("product_data",selectedProduct)
+            startActivity(intent)
+        }
         recyclerView2.adapter = productAdapter
         recyclerView3.adapter = productAdapter
 

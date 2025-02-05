@@ -78,14 +78,13 @@ tools:context=".Home.Fragment.HomeFragment">
             android:id="@+id/recycler_home_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:padding="20dp" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:padding="8dp"
             android:scrollbars="none"
             android:clipToPadding="false"
@@ -93,7 +92,7 @@ tools:context=".Home.Fragment.HomeFragment">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -118,14 +117,14 @@ tools:context=".Home.Fragment.HomeFragment">
             android:id="@+id/recycler_home_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:padding="20dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -150,8 +149,8 @@ tools:context=".Home.Fragment.HomeFragment">
             android:id="@+id/recycler_home_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:padding="20dp" />
 
         <LinearLayout
@@ -192,8 +191,8 @@ tools:context=".Home.Fragment.HomeFragment">
                 android:id="@+id/recycler_home_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp" />

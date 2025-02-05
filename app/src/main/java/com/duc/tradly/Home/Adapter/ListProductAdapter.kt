@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.duc.tradly.Home.Entities.Product
 import com.duc.tradly.R
 
-class ListProductAdapter(private val mList: List<Product>) : RecyclerView.Adapter<ListProductAdapter.ViewHolder>() {
+class ListProductAdapter(private val mList: List<Product>,private val onItemClick:(Product)->Unit) : RecyclerView.Adapter<ListProductAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.iv_product_img)
         val name: TextView = itemView.findViewById(R.id.tv_product_name)
         val price: TextView = itemView.findViewById(R.id.tv_product_price)
         val groceryName: TextView = itemView.findViewById(R.id.tv_product_gro)
+        val imageViewIcon: ImageView = itemView.findViewById(R.id.img_icon_gro)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,5 +35,9 @@ class ListProductAdapter(private val mList: List<Product>) : RecyclerView.Adapte
         holder.name.text = product.name
         holder.price.text = "$${product.price}"
         holder.groceryName.text = product.grocery.name
+        holder.imageViewIcon.setImageResource(product.grocery.resourceIdIcon)
+        holder.itemView.setOnClickListener {
+            onItemClick(product)
+        }
     }
 }
