@@ -46,6 +46,11 @@ dependencies {
     implementation("me.relex:circleindicator:2.1.6")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.nex3z:notification-badge:1.0.4")
+    implementation("com.google.android.gms:play-services-ads:23.6.0")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("androidx.lifecycle:lifecycle-process:2.8.3")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

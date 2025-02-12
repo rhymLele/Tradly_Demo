@@ -53,6 +53,16 @@ tools:context=".Home.Fragment.HomeFragment">
                     android:layout_toLeftOf="@+id/btn_cart"
                     android:background="@drawable/circle_background"
                     android:src="@drawable/baseline_heart_broken_24" />
+                <com.nex3z.notificationbadge.NotificationBadge
+                    android:id="@+id/badge"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignEnd="@id/btn_cart"
+                    android:layout_alignTop="@id/btn_cart"
+                    android:layout_marginEnd="-5dp"
+                    android:layout_marginTop="-5dp"
+                    app:nbMaxTextLength="2"/>
+
             </RelativeLayout>
 
             <EditText
@@ -198,7 +208,14 @@ tools:context=".Home.Fragment.HomeFragment">
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp" />
         </LinearLayout>
+        <FrameLayout
+            android:id="@+id/ad_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true" />
     </LinearLayout>
+
 </ScrollView>
 
 

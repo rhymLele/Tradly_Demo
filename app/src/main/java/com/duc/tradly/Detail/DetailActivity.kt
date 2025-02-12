@@ -28,7 +28,9 @@ import me.relex.circleindicator.CircleIndicator3
 
 class DetailActivity : AppCompatActivity() {
     lateinit var btn_Wish:ImageButton
-    private lateinit var wishListLauncher: ActivityResultLauncher<Intent>
+    val chuoi:String="Remove Cart"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,18 +40,21 @@ class DetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right,systemBars.bottom)
             insets
         }
+
         val btn_back=findViewById<ImageButton>(R.id.btn_back)
         val btn_add=findViewById<Button>(R.id.add_to_cart_button)
+        val originalPrice = findViewById<TextView>(R.id.original_price)
+        val product = intent.getSerializableExtra("product_data") as? Product
         btn_Wish=findViewById(R.id.icon2)
         btn_Wish.setOnClickListener {
             val intent= Intent(this, WishListActivity::class.java)
             startActivity(intent)
         }
-        val data =getListPhoto()
 
-        val originalPrice = findViewById<TextView>(R.id.original_price)
+
         originalPrice.paintFlags = originalPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-        val product = intent.getSerializableExtra("product_data") as? Product
+
+
         if (product != null) {
 
             val nameTextView: TextView = findViewById(R.id.tv_product_detail_name)
@@ -62,9 +67,11 @@ class DetailActivity : AppCompatActivity() {
             iconGrocery.setImageResource(product.grocery.resourceIdIcon)
             if(CartManager.cart.contains(product))
             {
+                btn_add.text = "Remove Cart"
                 btn_Wish.setImageResource(R.drawable.baseline_heart_broken_24v32)
             }
             else{
+                btn_add.text = "Add to Cart"
                 btn_Wish.setImageResource(R.drawable.baseline_heart_broken_24)
             }
         }
@@ -88,13 +95,6 @@ class DetailActivity : AppCompatActivity() {
         btn_back.setOnClickListener {
             finish()
         }
-    }
-    private fun getListPhoto(): List<Photo2> {
-        val a = mutableListOf<Photo2>()
-        a.add(Photo2(R.drawable.pic1))
-        a.add(Photo2(R.drawable.pic1))
-        a.add(Photo2(R.drawable.pic1))
-        return a
     }
 
     override fun onResume() {

@@ -2,16 +2,20 @@ package com.duc.tradly.Home.Fragment
 
 import android.content.Intent
 import android.graphics.Rect
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowMetrics
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.duc.tradly.CartManager
 import com.duc.tradly.Detail.DetailActivity
 import com.duc.tradly.Home.Adapter.GridAdapter
 import com.duc.tradly.Home.Adapter.ListGroceryAdapter
@@ -23,9 +27,17 @@ import com.duc.tradly.Home.Entities.Phantu
 import com.duc.tradly.Home.Entities.Product
 import com.duc.tradly.Home.screens.WishListActivity
 import com.duc.tradly.R
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.nex3z.notificationbadge.NotificationBadge
 
 
 class HomeFragment : Fragment() {
+    lateinit var cntItem:NotificationBadge
+    lateinit var  adView:AdView
+    lateinit var frlayout:FrameLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,8 +46,10 @@ class HomeFragment : Fragment() {
 
         val view= inflater.inflate(R.layout.fragment_home2, container, false)
         anhxa(view)
+
         return  view
     }
+
     private fun anhxa(view: View): Unit {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_home_1)
@@ -44,6 +58,8 @@ class HomeFragment : Fragment() {
         val recyclerView4: RecyclerView = view.findViewById(R.id.recycler_home_4)
         val recyclerGView: RecyclerView = view.findViewById(R.id.recycler_grid)
         val wishList:ImageButton=view.findViewById(R.id.btn_wish)
+        val cart:ImageButton=view.findViewById(R.id.btn_cart)
+         cntItem=view.findViewById(R.id.badge)
         recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView2.layoutManager =
@@ -53,7 +69,7 @@ class HomeFragment : Fragment() {
         recyclerView4.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-
+        cntItem.setNumber(CartManager.cart.getSize())
         val data = getPhanTu()
         val phantuAdapter = PhantuAdapter(data)
         recyclerView.adapter = phantuAdapter
@@ -104,6 +120,10 @@ class HomeFragment : Fragment() {
             val intent=Intent(requireContext(),WishListActivity::class.java)
             startActivity(intent)
         }
+        cart.setOnClickListener {
+            val intent=Intent(requireContext(),WishListActivity::class.java)
+            startActivity(intent)
+        }
         recyclerView2.adapter = productAdapter
         recyclerView3.adapter = productAdapter
 
@@ -128,4 +148,10 @@ class HomeFragment : Fragment() {
         return a
     }
 
+    override fun onResume() {
+        super.onResume()
+        cntItem.setNumber(CartManager.cart.getSize())
+
+
+    }
 }

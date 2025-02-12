@@ -2,27 +2,34 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Home.screens.HomeActivity">
-
-<androidx.viewpager2.widget.ViewPager2
-    android:id="@+id/viewpager2_home"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_above="@+id/bottom_nav" />
+    tools:context=".Home.screens.HomeActivity">
 
-<com.google.android.material.bottomnavigation.BottomNavigationView
-    android:id="@+id/bottom_nav"
-    android:backgroundTint="@color/AcliceBlue"
-    android:background="@color/AcliceBlue"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:itemIconTint="@color/color_custom"
-    app:itemTextColor="@color/color_custom"
-    android:layout_alignParentBottom="true"
-    app:menu="@menu/menu_home"/>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager2_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_nav" />
+
+    <FrameLayout
+        android:id="@+id/ad_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+         />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ad_view_container"
+        android:background="@color/AcliceBlue"
+        android:backgroundTint="@color/AcliceBlue"
+        app:itemIconTint="@color/color_custom"
+        app:itemTextColor="@color/color_custom"
+        app:menu="@menu/menu_home" />
 </RelativeLayout>
